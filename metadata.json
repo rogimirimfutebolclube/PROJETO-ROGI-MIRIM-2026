@@ -1,0 +1,5 @@
+{
+  "name": "Soccer School Manager",
+  "description": "An application for a social soccer school project to manage athlete registrations, attendance, and data, designed to be accessible on mobile devices.",
+  "requestFramePermissions": []
+}
