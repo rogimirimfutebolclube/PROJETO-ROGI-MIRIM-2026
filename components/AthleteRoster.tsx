@@ -29,7 +29,7 @@ const AthleteCard: React.FC<{ athlete: Athlete; onDelete: (id: string) => void }
                 <div className="flex items-center gap-4">
                     <button 
                         onClick={(e) => { e.stopPropagation(); onDelete(athlete.id); }} 
-                        className="text-red-500 hover:text-red-700 transition-colors p-2 rounded-full hover:bg-red-100"
+                        className="text-red-500 hover:text-red-400 transition-colors p-2 rounded-full hover:bg-red-500/20"
                         aria-label="Deletar atleta"
                     >
                         <Trash2 size={20} />
@@ -38,7 +38,7 @@ const AthleteCard: React.FC<{ athlete: Athlete; onDelete: (id: string) => void }
                 </div>
             </div>
             {isExpanded && (
-                <div className="border-t border-gray-200 p-4 space-y-4">
+                <div className="border-t border-gray-600 p-4 space-y-4">
                     <div>
                         <h4 className="font-semibold text-md text-textPrimary mb-2">Dados do Atleta</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -88,7 +88,7 @@ export const AthleteRoster: React.FC<AthleteRosterProps> = ({ athletes, deleteAt
               placeholder="Buscar por nome..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+              className="w-full pl-10 pr-4 py-2 bg-background border border-gray-600 rounded-lg text-textPrimary placeholder-gray-500 focus:ring-primary focus:border-primary"
           />
       </div>
       

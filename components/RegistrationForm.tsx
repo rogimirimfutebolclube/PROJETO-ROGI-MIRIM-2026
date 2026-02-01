@@ -50,7 +50,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ addAthlete }
       <form onSubmit={handleSubmit} className="space-y-8">
         {/* Athlete Section */}
         <div className="p-6 bg-surface rounded-lg shadow-md space-y-4">
-          <h2 className="text-2xl font-semibold text-textPrimary border-b pb-2 border-gray-200">Dados do Atleta</h2>
+          <h2 className="text-2xl font-semibold text-textPrimary border-b pb-2 border-gray-600">Dados do Atleta</h2>
           <InputField label="Nome Completo" name="fullName" value={athleteData.fullName} onChange={handleAthleteChange} required />
           <InputField label="Data de Nascimento" name="dob" type="date" value={athleteData.dob} onChange={handleAthleteChange} required />
           <InputField label="Endereço Completo" name="address" value={athleteData.address} onChange={handleAthleteChange} required />
@@ -60,7 +60,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ addAthlete }
 
         {/* Guardian Section */}
         <div className="p-6 bg-surface rounded-lg shadow-md space-y-4">
-          <h2 className="text-2xl font-semibold text-textPrimary border-b pb-2 border-gray-200">Dados do Responsável</h2>
+          <h2 className="text-2xl font-semibold text-textPrimary border-b pb-2 border-gray-600">Dados do Responsável</h2>
           <InputField label="Nome Completo" name="fullName" value={guardianData.fullName} onChange={handleGuardianChange} required />
           <InputField label="Endereço" name="address" value={guardianData.address} onChange={handleGuardianChange} required />
           <InputField label="RG" name="rg" value={guardianData.rg} onChange={handleGuardianChange} required />
@@ -69,7 +69,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ addAthlete }
           <InputField label="Pessoas que moram na casa" name="residentsInHouse" type="number" min="1" value={guardianData.residentsInHouse.toString()} onChange={handleGuardianChange} required />
         </div>
         
-        <button type="submit" className="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 shadow-lg">
+        <button type="submit" className="w-full bg-primary hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 shadow-lg">
           Inscrever Atleta
         </button>
       </form>
@@ -100,7 +100,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name, value, onChange, t
             required={required}
             placeholder={placeholder || label}
             min={min}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 bg-background border border-gray-600 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
         />
     </div>
 );
@@ -123,7 +123,7 @@ const SelectField: React.FC<SelectFieldProps> = ({ label, name, value, onChange,
             value={value}
             onChange={onChange}
             required={required}
-            className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md"
+            className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-background border-gray-600 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md"
         >
             <option value="" disabled>Selecione uma posição</option>
             {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}

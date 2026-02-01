@@ -21,7 +21,7 @@ const AccordionItem: React.FC<{ title: string; count: number; children: React.Re
                 <span>{title} ({count} atletas)</span>
                 <ChevronDown className={`transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
             </button>
-            {isOpen && <div className="p-4 border-t border-gray-200">{children}</div>}
+            {isOpen && <div className="p-4 border-t border-gray-600">{children}</div>}
         </div>
     );
 };
@@ -64,7 +64,7 @@ export const AttendanceList: React.FC<AttendanceListProps> = ({ athletes, markAt
                     {categoryAthletes.map(athlete => {
                         const hasAttendedToday = athlete.attendance.some(date => date.startsWith(today));
                         return (
-                            <li key={athlete.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-md">
+                            <li key={athlete.id} className="flex items-center justify-between p-3 bg-background rounded-md">
                                 <div>
                                     <p className="font-medium text-textPrimary">{athlete.fullName}</p>
                                     <p className="text-sm text-textSecondary">Dias de treino: {athlete.attendance.length}</p>
@@ -74,7 +74,7 @@ export const AttendanceList: React.FC<AttendanceListProps> = ({ athletes, markAt
                                     disabled={hasAttendedToday}
                                     className={`px-3 py-1.5 text-sm font-semibold rounded-md flex items-center gap-1.5 transition-colors duration-200 ${
                                         hasAttendedToday
-                                        ? 'bg-green-100 text-green-700 cursor-not-allowed'
+                                        ? 'bg-green-800 text-green-200 cursor-not-allowed'
                                         : 'bg-secondary text-white hover:bg-green-600'
                                     }`}
                                 >
