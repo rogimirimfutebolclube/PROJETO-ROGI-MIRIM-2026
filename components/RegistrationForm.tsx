@@ -100,7 +100,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name, value, onChange, t
             required={required}
             placeholder={placeholder || label}
             min={min}
-            className="mt-1 block w-full px-3 py-2 bg-background border border-gray-600 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 bg-background border border-gray-600 rounded-md shadow-sm text-textPrimary placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
         />
     </div>
 );
@@ -123,10 +123,10 @@ const SelectField: React.FC<SelectFieldProps> = ({ label, name, value, onChange,
             value={value}
             onChange={onChange}
             required={required}
-            className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-background border-gray-600 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md"
+            className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-background text-textPrimary border-gray-600 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md"
         >
-            <option value="" disabled>Selecione uma posição</option>
-            {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+            <option value="" disabled className="text-gray-500">Selecione uma posição</option>
+            {options.map(opt => <option key={opt} value={opt} className="bg-surface text-textPrimary">{opt}</option>)}
         </select>
     </div>
 );
